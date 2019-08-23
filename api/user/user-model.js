@@ -26,5 +26,5 @@ function findUserByUsername(username) {
 
 function addUser(user) {
   //return db('users').insert(user).then(id => findUserById(id[0]));
-  return db('users').insert(user);
+  return db('users').insert(user, 'id').then(id => findUserById(id[0]));
 }
